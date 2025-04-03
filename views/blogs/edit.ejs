@@ -1,0 +1,53 @@
+<% layout('/layouts/boilerplate') -%>
+
+<div class="container mt-5 p-4 shadow rounded bg-light">
+    <h2 class="text-center text-primary mb-4">Edit Your Blog</h2>
+    <form action="/blogs/<%= blog.id %>?_method=PUT" method="post">
+    
+        <!-- Title Field -->
+        <div class="form-group mb-3">
+            <label for="title" class="form-label"><b>Title</b></label>
+            <input 
+                name="blog[title]" 
+                value="<%= blog.title %>" 
+                type="text" 
+                class="form-control" 
+                id="title" 
+                placeholder="Enter the title"
+                required
+            >
+        </div>
+    
+        <!-- Content Field -->
+        <div class="form-group mb-3">
+            <label for="content" class="form-label"><b>Content</b></label>
+            <textarea 
+                name="blog[content]" 
+                class="form-control" 
+                id="content" 
+                rows="5" 
+                placeholder="Enter your blog content"
+                required
+            ><%= blog.content %></textarea>
+        </div>
+    
+        <!-- Author Field -->
+        <div class="form-group mb-3">
+            <label for="author" class="form-label"><b>Author</b></label>
+            <input 
+                name="blog[author]" 
+                value="<%= blog.author %>" 
+                type="text" 
+                class="form-control" 
+                id="author" 
+                placeholder="Enter the author's name"
+                required
+            >
+        </div>
+    
+        <!-- Submit Button -->
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-success btn-lg px-5">Publish</button>
+        </div>
+    </form>
+</div>

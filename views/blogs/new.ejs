@@ -1,0 +1,66 @@
+<% layout('/layouts/boilerplate') -%>
+<body class="bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+                <div class="card mt-5 shadow-sm">
+                    <div class="card-header text-white text-center" style="background-color: #5096b9;">
+                        <h3>Create a New Blog</h3>
+                    </div>
+                   
+                    <div class="card-body">
+                        <form action="/blogs" method="POST" novalidate class="needs-validation">  <!-- FOR RED LIGHT IF FORM WILL EMPTY -->
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Title</label>
+                                <input
+                                    name="blog[title]"
+                                    id="title"
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Enter blog title"
+                                    required
+                                />
+                                <div 
+                                  class="invalid-feedback">Please Enter a Title
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="content" class="form-label">Content</label>
+                                <textarea
+                                    name="blog[content]"
+                                    id="content"
+                                    class="form-control"
+                                    rows="5"
+                                    placeholder="Write your blog content here..."
+                                    required
+                                ></textarea>
+                                <div 
+                                  class="invalid-feedback">Please Enter a Content
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="author" class="form-label">Author</label>
+                                <input
+                                    name="blog[author]"
+                                    id="author"
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Author's name"
+                                    required
+                                />
+                                <div 
+                                  class="invalid-feedback">Please Enter a Author Name:
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100">Create Blog</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   </body>

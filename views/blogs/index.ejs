@@ -1,0 +1,28 @@
+<% layout('/layouts/boilerplate') -%>
+
+<div class="container mt-5">
+  <h2 class="text-center text-primary mb-5">📚 Explore Our Blogs</h2>
+  <div class="row g-4">
+    <% for (let blog of allblogs) { %>
+      <div class="col-md-4 col-sm-6"> <!-- Responsive: 3 cards on medium screens, 2 on small -->
+        <a href="/blogs/<%= blog.id %>" class="text-decoration-none text-dark">
+          <div class="card h-100 shadow-sm border blog-card"> <!-- Added 'border' class -->
+            <div class="card-body">
+              <h5 class="card-title text-truncate text-primary">
+                <%= blog.title %>
+              </h5>
+              <p class="card-text text-muted text-truncate" style="max-height: 4.5rem; overflow: hidden;">
+                <%= blog.content %>
+              </p>
+            </div>
+            <div class="card-footer bg-light d-flex justify-content-between align-items-center">
+              <small class="text-muted">✍ Author: <%= blog.author %></small>
+              <small class="text-muted">🔗 Read More</small>
+            </div>
+          </div>
+        </a>
+      </div>
+    <% } %>
+  </div>
+</div>
+

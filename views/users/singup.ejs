@@ -1,0 +1,62 @@
+<% layout('/layouts/boilerplate') -%>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-sm rounded-lg">
+        <div class="card-header text-center bg-success text-white">
+          <h2>Creat an account</h2>
+          <p>Connect with your friends today!</p>
+        </div>
+        <div class="card-body">
+          <form action="/singup" method="post" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input
+                name="username"
+                id="username"
+                type="text"
+                class="form-control"
+                placeholder="Enter your username"
+                required
+              />
+              <div class="invalid-feedback">Please enter a username.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                name="email"
+                id="email"
+                type="email"
+                class="form-control"
+                placeholder="Enter your email"
+                required
+              />
+              <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                name="password"
+                id="password"
+                type="password"
+                class="form-control"
+                placeholder="Create a password"
+                required
+              />
+              <div class="invalid-feedback">Please enter a password.</div>
+            </div>
+
+            <div class="d-grid">
+              <button class="btn btn-success btn-block">Sign Up</button>
+            </div>
+          </form>
+        </div>
+        <div class="card-footer text-center">
+          <small>Already have an account? <a href="/login" class="text-primary">Log in here</a></small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
